@@ -1,0 +1,19 @@
+<students>
+	<student>
+		<SLNO>23<SLNO>
+		<NAME>John Carter<NAME>
+		<ADMISSIONDATE>25/12/2015</ADMISSIONDATE>
+	</student>
+	
+	<student>
+		<SLNO>29<SLNO>
+		<NAME>Bob Marshal<NAME>
+		<ADMISSIONDATE>13/01/1999</ADMISSIONDATE>
+	</student>
+	
+	<student>
+		<SLNO>35<SLNO>
+		<NAME>Clark Kent<NAME>
+		<ADMISSIONDATE>17/06/2005</ADMISSIONDATE>
+	</student>
+</students>
