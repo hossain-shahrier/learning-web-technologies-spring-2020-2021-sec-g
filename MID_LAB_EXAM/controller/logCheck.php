@@ -18,12 +18,12 @@
 
 			foreach($json['users'] as $user){
 				if($user['id'] == $id && $user['password'] == $password){
-					if($username[0]=='a'){
+					if($id[0]=='a'){
 						$_SESSION['flag'] = true;
 						$_SESSION['id'] = $id;
 						header('location: ../view/aHome.php');
 					}
-					else if($username[0]=='u'){
+					else if($id[0]=='u'){
 						$_SESSION['flag'] = true;
 						$_SESSION['id'] = $id;
 						header('location: ../view/uHome.php');
