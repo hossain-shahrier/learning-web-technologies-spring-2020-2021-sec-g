@@ -1,8 +1,6 @@
-  
 <?php
-
 	session_start();
-	unset($_SESSION['flag']);
-	header('location: ../view/login.html');
 
+	unset($_SESSION['email']);
+	header('location: ../views/login.html');
 ?>

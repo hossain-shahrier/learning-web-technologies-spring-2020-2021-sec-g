@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grab your personal or business account</title>
+</head>
+<body>
+    <a href="./login.html">Login</a>
+    <table width="100%">
+
+        <tr style="height:150px;">
+            <td colspan="2">
+                <center>
+                    <h3>Bank is secured, easy to pay <br>and get paid -sign up for free</h3>
+                </center>
+            </td>
+        </tr>
+
+    <tr>
+        <td>
+        <form method="POST" action="../controller/accountCheck.php">
+            <center>
+            <input type="radio" name="account" value="personal">
+            <label for="personal"><b>Personal Account</b></label><br>
+            <p>get a personal account ,shop online or send and receive money .All without<br>sharing your payment info.</p>
+            <input type="radio" name="account" value="business">
+            <label for="business"><b>Business Account</b></label><br>
+            <p>Accept Bank and all cards online or at the register.<br>Send secure invoices to your customers.</p>
+            <input type="radio" name="account" value="freelance">
+            <label for="freelance"><b>Freelance Account</b></label><br>
+            <p>Make your account as a freelance friendly account.<br> grab all benifits of the freelance communities and receive money quickly.</p>
+            <input type="submit" name="submit" value="submit">
+            </center>
+        </form>
+        </td>
+    </tr>
+
+    </table>
+</body>
+</html>
