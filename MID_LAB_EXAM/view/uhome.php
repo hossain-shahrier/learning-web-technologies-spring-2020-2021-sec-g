@@ -1,12 +1,13 @@
 <?php
+	//session_start();
 	$title = "User Home Page";
 	include('header.php');
 ?>
 
 
 <center>
-	<h1>Welcome <?php echo $_SESSION['username']; ?>!</h1>
-	<a href="uProfile.html">Profile</a>
+	<h1>Welcome <?php echo $_SESSION['id']; ?>!</h1>
+	<a href="uProfile.php">Profile</a>
 	<br/>
 	<a href="change_password.html">Change Password</a>
 	<br/>
