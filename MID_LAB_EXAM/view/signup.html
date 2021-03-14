@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>Registration</title>
+</head>
+
+<body>
+    <form method="post" action="../controller/regCheck.php">
+        <fieldset style="width:30%">
+            <legend>Registration</legend>
+            <table>
+                <tr>
+                    <td>Id</td>
+                    <td><input type="number" name="id" value=""></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password" value=""></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password</td>
+                    <td><input type="password" name="repass" value=""></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="name" value=""></td>
+                </tr>
+                <tr>
+                    <td>User Type</td>
+                    <td>
+                        <input type="radio" name="gender"> User
+                        <input type="radio" name="gender"> Admin
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="signup" value="Submit">
+                        <a href="login.html">Sign in</a>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+
+</body>
+
+</html>
