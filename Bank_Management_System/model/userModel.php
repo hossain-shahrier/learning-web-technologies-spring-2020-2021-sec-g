@@ -2,9 +2,9 @@
 
 require_once('db.php');
 
-function validateUser($username, $password){
+function validateUser($username, $password, $type){
 	$conn = getConnection();
-	$sql = "select * from users where username='{$username}' and password='{$password}'";
+	$sql = "select * from users where username='{$username}' and password='{$password}' and type='{$type}'";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 	if($row ==!null){
@@ -14,73 +14,73 @@ function validateUser($username, $password){
 	}
 }
 
-// function insertUser($user){
+function insertUser($user){
 	
-//     $conn = getConnection();
-//     $sql = "insert into users values('', '{$user['username']}','{$user['password']}','{$user['email']}','{$user['type']}')";
+    $conn = getConnection();
+    $sql = "insert into users values('', '{$user['username']}','{$user['password']}','{$user['email']}','{$user['type']}')";
 
-// 	$result = mysqli_query($conn, $sql);
+	$result = mysqli_query($conn, $sql);
 
-// 	if($result){
-// 		return true;
-// 	}else{
-// 		return false;
-// 	}
+	if($result){
+		return true;
+	}else{
+		return false;
+	}
 
-// }
+}
 
-// function getUserbyId($id){
+function getUserbyId($id){
 	
-// 	$conn = getConnection();
-// 	$sql = "select * from users where id='{$id}";
-// 	$result = mysqli_query($conn, $sql);
-// 	$row = mysqli_fetch_assoc($result);
+	$conn = getConnection();
+	$sql = "select * from users where id='{$id}";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
 
-// 	return $row;
-// }
+	return $row;
+}
 
-// function getAllUser(){
+function getAllUser(){
 
-// 	$conn = getConnection();
-// 	$sql = "select * from users";
-// 	$result = mysqli_query($conn, $sql);
-// 	$users = [];
-// 	while ($row = mysqli_fetch_assoc($result)) {
-// 		array_push($users, $row);
-// 	}
-// 	return $users;
-// }
+	$conn = getConnection();
+	$sql = "select * from users";
+	$result = mysqli_query($conn, $sql);
+	$users = [];
+	while ($row = mysqli_fetch_assoc($result)) {
+		array_push($users, $row);
+	}
+	return $users;
+}
 
-// function updateUser($user){
-// 	$conn = getConnection();
-// 	$sql = "update users set username='{$user['username']}', password='{$user['password']}', email='{$user['email']}', type='{$user['type']}'";
-// 	$result = mysqli_query($conn, $sql);
+function updateUser($user){
+	$conn = getConnection();
+	$sql = "update users set username='{$user['username']}', password='{$user['password']}', email='{$user['email']}', type='{$user['type']}'";
+	$result = mysqli_query($conn, $sql);
 	
-// 	if($result){
-// 		return true;
-// 	}else{
-// 		return false;
-// 	}
-// }
+	if($result){
+		return true;
+	}else{
+		return false;
+	}
+}
 
-// function deleteUser($id){
-// 	$conn = getConnection();
-// 	$sql = "delete from users where id='{$id}";
-// 	$result = mysqli_query($conn, $sql);
+function deleteUser($id){
+	$conn = getConnection();
+	$sql = "delete from users where id='{$id}";
+	$result = mysqli_query($conn, $sql);
 	
-// 	if($result){
-// 		return true;
-// 	}else{
-// 		return false;
-// 	}
-// }
+	if($result){
+		return true;
+	}else{
+		return false;
+	}
+}
 
-// function getUserByName($username){
-// 	$conn = getConnection();
-// 	$sql = "select * from users where username='{$username}";
-// 	$result = mysqli_query($conn, $sql);
-// 	$row = mysqli_fetch_assoc($result);
-// 	return $row;
-// }
+function getUserByName($username){
+	$conn = getConnection();
+	$sql = "select * from users where username='{$username}";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
+	return $row;
+}
 
 ?>

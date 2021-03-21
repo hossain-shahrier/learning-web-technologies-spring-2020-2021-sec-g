@@ -7,7 +7,7 @@
 			$email = $_POST['email'];
 			$password = $_POST['password'];
 			$repassword = $_POST['repassword'];
-			
+			$type = $_POST['accounts'];
 			
 			if($username == "" || $password == "" || $email == ""){
 					echo "null value found...";
@@ -18,7 +18,7 @@
 							'username'	=> $username, 
 							'password'	=> $password, 
 							'email'		=> $email, 
-							'type'		=> $account
+							'type'		=> $type
 						];
 				
 						$status = insertUser($user);
