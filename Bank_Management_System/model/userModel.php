@@ -2,9 +2,9 @@
 
 require_once('db.php');
 
-function validateUser($username, $password, $type){
+function validateUser($username, $password){
 	$conn = getConnection();
-	$sql = "select * from users where username='{$username}' and password='{$password}' and type='{$type}'";
+	$sql = "select * from users where username='{$username}' and password='{$password}'";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 	if($row ==!null){

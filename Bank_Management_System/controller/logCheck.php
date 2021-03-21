@@ -12,7 +12,7 @@
 			echo "null input...";
 		}else{
 
-			$status = validateUser($username, $password);
+			$status = validateUser($username, $password , $type);
 
 			if($status){
 				$_SESSION['flag'] = true;
