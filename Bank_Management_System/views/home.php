@@ -1,17 +1,12 @@
 <?php
-    session_start()
+    session_start();
+    require_once('../model/userModel.php');
+    $email = $_SESSION['email'];
+    $account = userAccount($email);
+    if($account=='personal'){
+        header('location: ./personal/personal.php');
+    }
+    else if($account=='business'){
+        header('location: ./business/business.php');
+    }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Welcome Home, <?php  echo $_SESSION['username']; ?></h1>
-    <a href="../controller/logout.php"> Logout</a>
-</body>
-</html>

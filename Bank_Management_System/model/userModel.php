@@ -2,9 +2,9 @@
 
 require_once('db.php');
 
-function validateUser($username, $password){
+function validateUser($username, $password, $email){
 	$conn = getConnection();
-	$sql = "select * from users where username='{$username}' and password='{$password}'";
+	$sql = "select * from users where username='{$username}'and password='{$password}' and email='{$email}' ";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 	if($row ==!null){
@@ -13,7 +13,13 @@ function validateUser($username, $password){
 		return false;
 	}
 }
-
+function userAccount($email){
+	$conn = getConnection();
+	$sql = "select * from users where email='{$email}' ";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
+	return $row['type'];
+}
 function insertUser($user){
 	
     $conn = getConnection();
