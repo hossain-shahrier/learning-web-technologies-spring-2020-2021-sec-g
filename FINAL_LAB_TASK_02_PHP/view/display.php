@@ -1,8 +1,10 @@
 <?php
     session_start();
-    $name = $_SESSION['name'];
-    $bprice =$_SESSION['bprice'];
-    $sprice =$_SESSION['sprice']
+    require_once('../model/productModel.php');
+   
+    // $bprice =$_SESSION['bprice'];
+    // $sprice =$_SESSION['sprice'];
+    // productInfo($name);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,15 +19,22 @@
         <legend>DISPLAY</legend>
         <table>
             <tr>
-                <th>Name</th>
+                <th>Name </th>
                 <th>Profit</th>
             </tr>
+        <?php $row = getAllProduct(); 
+        foreach($row as $var){
+            $profit = $var['sprice']-$var['bprice'];
+            echo "
             <tr>
-                <td>Samsung</td>
-                <td>5000</td>
-                <td>edit</td>
-                <td>delete</td>
-            </tr>
+                <td>{$var['name']}</td>
+                <td>{$profit}</td>
+                <td><a href='./update.html'>edit</a></td>
+                <td><a href='./delete.html'>delete</a></td>
+        </tr>
+            ";
+        }   
+           ?> 
         </table>
     </fieldset>
 </body>

@@ -6,6 +6,8 @@
         $name = $_POST['name'];
         $bprice = $_POST['bprice'];
         $sprice= $_POST['sprice'];
+
+        
         if($name ==""|| $bprice ==""|| $sprice ==""){
             echo "Null Input ...";
         }
@@ -15,8 +17,8 @@
                 'bprice' => $bprice,
                 'sprice' => $sprice
             ];
-            $status = insertProduct($product);
-            if($product && isset($_POST['display'])){
+            $status = updateProduct($product);
+            if($status && isset($_POST['display'])){
                 header('location: ../view/display.php');
             }
             else{
