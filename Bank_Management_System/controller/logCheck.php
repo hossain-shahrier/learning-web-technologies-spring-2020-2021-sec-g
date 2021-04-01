@@ -4,19 +4,15 @@
 	require_once('../model/userModel.php');
 
 	if(isset($_POST['submit'])){
-
-		$username = $_POST['username'];
-		$password = $_POST['password'];
+		
 		$email  = $_POST['email'];
-
-		if($username == "" || $password == ""){
-
+		$password = $_POST['password'];
+		if($email == "" || $password == ""){
 			echo "null input...";
-
 		}
 		else{
 
-			$status = validateUser($username, $password, $email);
+			$status = validateUser($password, $email);
 
 			if($status){
 				$_SESSION['flag'] = true;

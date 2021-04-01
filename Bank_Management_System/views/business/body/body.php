@@ -1,0 +1,9 @@
+<body>
+    <?php
+        include('sidebar/sidebar.php');
+    ?>
+    <?php
+        include('main/main.php');
+    ?>
+</body>
+</html>

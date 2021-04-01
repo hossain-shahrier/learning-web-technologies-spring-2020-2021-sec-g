@@ -4,31 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Bank of History</title>
 </head>
 <body>
-    
-    <center>
-        <a href="./login.html"> Login</a> |
-        <a href="./signup.html"> SignUp</a>
-    </center>
-    <div>
-        <table  width="100%">
-                <tr style="height:150px;">
-                    <td colspan="2">
-                        <center>
-                                <h3>Welcome to the Bank </h3>
-                        </center>
-                        
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td colspan="2" align="center">
-                        Copyright @ 2021
-                    </td>
-                </tr>
-        </table>
+    <div class="hero">
+        <div class="navbar">
+            <img src="./images/logo.png" alt="Bank logo" class="logo">
+            <div class="account">
+                <button type="button" onclick="signup()">Sign Up</button>
+                <button type="button" onclick="login()">LogIn</button>Log In</button>
+            </div>
+        </div>
+        <div class="content">
+            
+            <h1>Welcome,<br>to the<br>Old Town Bank.</h1>
+            <button type="button">Take a tour</button>
+        </div>
+        <div class="side-bar">
+            <div class="social-links">
+                <img src="images/fb.png" alt="facebook">
+                <img src="images/ig.png" alt="instagram">
+                <img src="images/tw.png" alt="tweeter">
+            </div>
+            <div class="useful-links">
+                <img src="images/share.png" alt="share">
+                <img src="images/info.png" alt="info">
+            </div>
+        </div>
     </div>
+    <script src="./index.js"></script>
 </body>
 </html>

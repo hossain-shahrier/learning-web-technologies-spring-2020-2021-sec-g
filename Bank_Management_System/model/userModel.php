@@ -2,9 +2,9 @@
 
 require_once('db.php');
 
-function validateUser($username, $password, $email){
+function validateUser($password, $email){
 	$conn = getConnection();
-	$sql = "select * from users where username='{$username}'and password='{$password}' and email='{$email}' ";
+	$sql = "select * from users where password='{$password}' and email='{$email}' ";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 	if($row ==!null){
@@ -20,10 +20,17 @@ function userAccount($email){
 	$row = mysqli_fetch_assoc($result);
 	return $row['type'];
 }
+function userId($email){
+	$conn = getConnection();
+	$sql = "select * from users where email='{$email}' ";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
+	return $row['Id'];
+}
 function insertUser($user){
 	
     $conn = getConnection();
-    $sql = "insert into users values('', '{$user['username']}','{$user['password']}','{$user['email']}','{$user['type']}')";
+    $sql = "insert into users values('', '{$user['username']}','{$user['password']}','{$user['email']}','{$user['type']}',0)";
 
 	$result = mysqli_query($conn, $sql);
 
@@ -88,5 +95,11 @@ function getUserByName($username){
 	$row = mysqli_fetch_assoc($result);
 	return $row;
 }
-
+function userBalance($email){
+	$conn = getConnection();
+	$sql = "select * from users where email='{$email}' ";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
+	return $row['balance'];
+}
 ?>

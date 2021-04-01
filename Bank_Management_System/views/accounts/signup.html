@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="./signupStyles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="signup-content">
+            
+            <form action="../../controller/regCheck.php">
+                <h1>Sign Up</h1>
+                <table>
+                    <tr>
+                        <td><input type="text" name="username" 
+                            id="username" required 
+                            placeholder="Username">
+                        </td>
+                    </tr>
+                        <td><input type="email" name="email" 
+                            id="email" required 
+                            placeholder="Email Address">
+                        </td>
+                    <tr>
+                    <tr>
+                        <td><input type="password" name="password" 
+                            id="password" required 
+                            placeholder="Password">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="repassword" name="repassword" 
+                            id="repassword" required 
+                            placeholder="Re-password">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="accounts" id="accounts">
+                                <option value="business">Business</option>
+                                <option value="personal">Personal</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input name="submit" type="submit" value="submit">
+                        </td>
+                    </tr>
+                    <tr><td>Have an account? <a href="./login.html"><strong>Login</strong></a></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+<!-- <img src="./assets//undraw_enter_uhqk.svg" alt="" class="signup-graphics"> -->
+    </div>
+</body>
+</html>

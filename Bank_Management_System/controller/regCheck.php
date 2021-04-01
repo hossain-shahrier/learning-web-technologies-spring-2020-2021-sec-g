@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	require_once('../model/userModel.php');
-	if(isset($_POST['signup'])){
+	if(isset($_POST['submit'])){
 		
 			$username = $_POST['username'];
 			$email = $_POST['email'];
@@ -20,7 +20,6 @@
 							'email'		=> $email, 
 							'type'		=> $type
 						];
-				
 						$status = insertUser($user);
 						if($status){
 							header('location: ../views/login.html');

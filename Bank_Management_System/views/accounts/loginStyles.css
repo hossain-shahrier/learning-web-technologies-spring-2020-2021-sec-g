@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+
+}
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000002;
+
+    background-image: url(./assets/david-werbrouck-5GwLlb-_UYk-unsplash.jpg);
+
+}
+.login-content{
+    margin: 100px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding: 60px;
+    border: none;
+    border-radius: 40px;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+}
+.login-content h1{
+    padding: 0 0 15px 0;
+    margin: 10px;
+    text-align: center;
+    border-bottom: 1px solid silver;
+}
+
+.login-content input{
+    width: 180px;
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-bottom: 0.5px solid black;
+}
+.login-content select{
+    padding: 10px;
+    width: 100%;
+   
+}
+.login-content .submit{
+    border-radius: 5px;
+    color: white;
+    top: 10px;
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0px;
+    border: transparent;
+    background-color: black;
+}
+a{
+    text-decoration: none;
+    color: black;
+    
+}
