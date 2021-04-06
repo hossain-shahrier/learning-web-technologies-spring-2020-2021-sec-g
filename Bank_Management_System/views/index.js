@@ -1,6 +1,6 @@
 function signup() {
-    location.hash ='./signup.php';
+    location.href = './accounts/signup.html';
 }
 function login(){
-    location.hash = './login.php';
+    location.href = './accounts/login.html';
 }

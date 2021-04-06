@@ -34,10 +34,11 @@ function userName($email){
 	$row = mysqli_fetch_assoc($result);
 	return $row['username'];
 }
+
 function insertUser($user){
 	
     $conn = getConnection();
-    $sql = "insert into users values('', '{$user['username']}','{$user['password']}','{$user['email']}','{$user['account']}','{$user['active']}',0,0,0,0)";
+    $sql = "insert into users values('', '{$user['username']}','{$user['password']}','{$user['email']}','{$user['account']}',0)";
 
 	$result = mysqli_query($conn, $sql);
 
@@ -48,32 +49,26 @@ function insertUser($user){
 	}
 
 }
-function activeStatus($email){
-	$conn = getConnection();
-	$sql = "select * from users where email='{$email}' ";
-	$result = mysqli_query($conn, $sql);
-	$row = mysqli_fetch_assoc($result);
-	if($row['active']== 0 ){
-		return false;
-	}
-	else{
-		return true;
-	}
-}
 function insertTransaction($transaction){
 	$conn = getConnection();
     $sql = "insert into users values()";
 
 }
-
+function connection(){
+	$conn = getConnection();
+	return $conn;
+}
+function sql($id){
+	$sql = "select * from users where id= $id";
+	return $sql;
+}
 function getUserbyId($id){
 	
 	$conn = getConnection();
-	$sql = "select * from users where id='{$id}";
+	$sql = "select * from users where id= $id";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
-
-	return $row;
+	return $row['username'];
 }
 
 function getAllUser(){
@@ -88,9 +83,9 @@ function getAllUser(){
 	return $users;
 }
 
-function updateUser($user){
+function updateUser($balance,$amount,$id){
 	$conn = getConnection();
-	$sql = "update users set username='{$user['username']}', password='{$user['password']}', email='{$user['email']}', type='{$user['type']}'";
+	$sql = "UPDATE `users` SET `balance`='{$balance}',`transaction`='{$amount}' WHERE id='{$id}' ";
 	$result = mysqli_query($conn, $sql);
 	
 	if($result){
@@ -119,9 +114,9 @@ function getUserByName($username){
 	$row = mysqli_fetch_assoc($result);
 	return $row;
 }
-function userBalance($email){
+function userBalance($id){
 	$conn = getConnection();
-	$sql = "select * from users where email='{$email}' ";
+	$sql = "select * from users where id='{$id}' ";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 	return $row['balance'];

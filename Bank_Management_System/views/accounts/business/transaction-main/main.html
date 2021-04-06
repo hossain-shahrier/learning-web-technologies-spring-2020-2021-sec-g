@@ -1,0 +1,34 @@
+<div class="main">
+    <div class="search">
+        <form>
+            <input 
+                id="search_input"
+                name="name"
+                type="search" 
+                class="search_input" 
+                placeholder="Search by User Name, ID or Email ..." onkeyup= "search()"
+            />
+            <div id="result" class="result"></div>
+        </form>
+    </div>
+    
+    
+</div>
+<script type="text/javascript">
+
+    function search(){
+        const data = document.getElementById('search_input').value;
+
+            const xhttp = new XMLHttpRequest();
+            xhttp.open('POST','transaction-main/result.php',true);
+            
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    document.getElementById('result').innerHTML = this.responseText;
+                }
+            }
+            xhttp.send('name='+ data);
+            
+}
+</script>
