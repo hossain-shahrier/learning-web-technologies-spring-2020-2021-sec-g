@@ -1,0 +1,52 @@
+<style>
+    .businessInfo{
+        margin-top: 10px;
+        background-color: #ffffff;
+        box-sizing: border-box;
+        padding: 100px;
+        border: none;
+        border-radius: 8px;
+        width: auto;
+        height: auto;
+        display: flex;
+        box-shadow: 2px 1px 3px 0px #ccc;
+        /* word-wrap: break-word; */
+    }
+    input{
+        display: flex;
+        margin: 10px;
+        flex-direction: column;
+        padding:20px;
+        border: 1px solid gray;
+        border-radius: 10px;
+    }
+    form {
+    display: block;
+    margin-top: 0em;
+    }
+    .businessInfo {
+        left: 400px;
+
+    }
+    #submit{
+        background: transparent;
+        border-color: 0.5px solid gray;
+        padding: 10px;
+        border-radius: 5px;
+    }
+</style>
+<div class="businessInfo">
+    <center>
+    <form action="./business-main/userBusiness.php" method="POST">
+        <label>Business Contact</label>
+        <input type="text" name="username" id="username" placeholder="Write your full Username" >
+        <label>Business details</label>
+        <input type="text" name="name" id="name" placeholder="Legal Business Name" >
+        <input type="number" name="phone" id="phone" placeholder="Business phone number" >
+        <input type="text" name="type" id="type" placeholder="Business Type" >
+        <input type="url" name="url" id="url" placeholder="Business Url" >
+        <input type="text" name="location" id="location" placeholder="Business Location" >
+        <input type="submit" value="Submit" name="submit" id="submit">
+    </form>
+    </center>
+</div>

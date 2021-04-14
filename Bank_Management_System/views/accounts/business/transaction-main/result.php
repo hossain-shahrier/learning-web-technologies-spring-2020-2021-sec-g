@@ -1,5 +1,5 @@
 <?php
-session_start();
+        session_start();
         $self =$_SESSION['id'];
         $name = $_REQUEST['name'];
         $conn = mysqli_connect('localhost', 'root', '', 'bank_management_system');

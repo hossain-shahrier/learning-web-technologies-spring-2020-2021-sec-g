@@ -8,26 +8,31 @@
     <link rel="stylesheet" href="loginStyles.css">
 </head>
 <body>
+    <!-- <img src="../images/logo_black.png" alt="Bank logo" class="logo" />  -->
     <div class="container">
+        <div class="navbar">
+            <img src="../images/logo.png" alt="Bank logo" class="logo" onclick="Redirect()" onsubmit="return validation()">
+        </div>
         <div class="login-content">
             
-            <form action="../../controller/logCheck.php" method="POST">
+            <form name="login" action="../../controller/logCheck.php" method="POST">
+                <!-- -->
                 <h1>Log In</h1>
                 <table>
                         <td><input type="email" name="email" 
-                            id="email" required 
+                            id="input" 
                             placeholder="Email Address">
                         </td>
                     <tr>
                     <tr>
                         <td><input type="password" name="password" 
-                            id="password" required 
+                            id="input" 
                             placeholder="Password">
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input name="submit" type="submit" value="submit">
+                            <input class="submit" name="submit" type="submit" value="submit">
                         </td>
                     </tr>
                     <tr><td>Don't have account? <a href="./signup.html"><strong>Sign Up</strong></a></td>
@@ -36,5 +41,13 @@
             </form>
         </div>
     </div>
+    <script>
+            function Redirect() {
+               window.location = "../index.html";
+            }
+            function validation(){
+                var firstname = document.forms[""]
+            }
+    </script>
 </body>
 </html>

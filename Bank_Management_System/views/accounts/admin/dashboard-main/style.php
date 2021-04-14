@@ -2,12 +2,22 @@
     .body{
         display: flex;
         background-color: lightgray;
+        padding-left: 200px;
+        height:85vh;
     } 
     .main{
         margin : 20px;
         margin-top: 30px;
         padding: 10px;
     } 
+    .status{
+        color: black;
+        border-color:black;
+    }
+    .action{
+        color: black;
+        border-color:black;
+    }
     .balance, .pending, .processed{
         margin : 20px;
         padding: 10px;

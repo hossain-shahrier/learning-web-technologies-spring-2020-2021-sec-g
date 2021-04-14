@@ -13,26 +13,27 @@ function validateUser($email,$password){
 		return false;
 	}
 }
-function userAccount($email){
+function insertBusiness($business){
 	$conn = getConnection();
-	$sql = "select * from users where email='{$email}' ";
+    $sql = "INSERT INTO business VALUES ('','{$business['username']}','{$business['bname']}','{$business['phone']}','{$business['btype']}','{$business['burl']}','','{$business['blocation']}')";
 	$result = mysqli_query($conn, $sql);
-	$row = mysqli_fetch_assoc($result);
-	return $row['account'];
+	if($result){
+		return true;
+	}else{
+		return false;
+	}
+
 }
-function userId($email){
+function insertLoan($loan){
 	$conn = getConnection();
-	$sql = "select * from users where email='{$email}' ";
+	$sql = "INSERT INTO `business`( `loan`) VALUES ('$loan') WHERE `name` =$loan ";
 	$result = mysqli_query($conn, $sql);
-	$row = mysqli_fetch_assoc($result);
-	return $row['id'];
-}
-function userName($email){
-	$conn = getConnection();
-	$sql = "select * from users where email='{$email}' ";
-	$result = mysqli_query($conn, $sql);
-	$row = mysqli_fetch_assoc($result);
-	return $row['username'];
+	if($result){
+		return true;
+	}else{
+		return false;
+	}
+
 }
 
 function insertUser($user){
@@ -49,19 +50,54 @@ function insertUser($user){
 	}
 
 }
-function insertTransaction($transaction){
-	$conn = getConnection();
-    $sql = "insert into users values()";
+// function TransactionHistory($username,$account,$amount){
+// 	$conn = getConnection();
+// 	$sql  = "INSERT INTO `transaction_users`(`id`, `username`, `account`, `transaction`) VALUES ('','{$username}','{$account}','{$amount}')";
+// 	$result = mysqli_query($conn, $sql);
+// 	if($result){
+// 		return true;
+// 	}else{
+// 		return false;
+// 	}
+// }
+function transaction_users(){
+	$conn =getconnection();
+	$sql = "SELECT * FROM `transaction_users` ";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
+	return $row['username'];
 
 }
-function connection(){
+function userAccount($email){
 	$conn = getConnection();
-	return $conn;
+	$sql = "select * from users where email='{$email}' ";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
+	return $row['account'];
 }
-function sql($id){
-	$sql = "select * from users where id= $id";
-	return $sql;
+function userAccountById($id){
+	$conn = getConnection();
+	$sql = "select * from users where id='{$id}' ";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
+	return $row['account'];
 }
+function userId($email){
+	$conn = getConnection();
+	$sql = "select * from users where email='{$email}' ";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
+	return $row['id'];
+}
+function userName($id){
+	$conn = getConnection();
+	$sql = "select * from users where id='{$id}' ";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
+	return $row['username'];
+}
+
+
 function getUserbyId($id){
 	
 	$conn = getConnection();
@@ -69,6 +105,13 @@ function getUserbyId($id){
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 	return $row['username'];
+}
+function getUserStatusbyId($id){
+	$conn = getConnection();
+	$sql = "select * from users where id=$id ";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
+	return $row['active'];
 }
 
 function getAllUser(){
@@ -83,6 +126,14 @@ function getAllUser(){
 	return $users;
 }
 
+function getAdmin(){
+
+	$conn = getConnection();
+	$sql = "select * from users where id = 5 ";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
+	return $row['username'];
+}
 function deleteUser($id){
 	$conn = getConnection();
 	$sql = "delete from users where id='{$id}";

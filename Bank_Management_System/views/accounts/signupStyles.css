@@ -4,26 +4,40 @@
     font-family: sans-serif;
 
 }
+.navbar{
+    width: 85%;
+    height: 15%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .container{
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     background-color: #000002;
-
     background-image: url(./assets/esther-ann-FGA4aJGVmUg-unsplash.jpg);
 
 }
+.logo{
+    width: 30px;
+    cursor: pointer;
+}
 .signup-content{
+    /* position: fixed; */
     margin: 100px;
     background-color: #ffffff;
     box-sizing: border-box;
     padding: 60px;
     border: none;
     border-radius: 40px;
-    height: 60vh;
+    height: 63vh;
     display: flex;
     align-items: center;
+    text-align: center;
 }
 .signup-content h1{
     padding: 0 0 15px 0;
@@ -32,30 +46,36 @@
     border-bottom: 1px solid silver;
 }
 
-.signup-content input{
+/* .signup-content input{
+    width: 180px;
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-bottom: 0.5px solid black;
+} */
+.signup-content select{
+    padding: 10px;
+    width: 100%;
+   
+}
+input{
     width: 180px;
     margin: 10px;
     padding: 10px;
     border: none;
     border-bottom: 0.5px solid black;
 }
-.signup-content select{
-    padding: 10px;
-    width: 100%;
-   
-}
-.signup-content .submit{
+.submit{
     border-radius: 5px;
     color: white;
     top: 10px;
     padding: 10px;
-    width: 100%;
-    margin: 10px 0px;
-    border: transparent;
+    width: 200px;
+    margin: 10px 10px;
+    border: none;
     background-color: black;
 }
 a{
     text-decoration: none;
     color: black;
-    
 }

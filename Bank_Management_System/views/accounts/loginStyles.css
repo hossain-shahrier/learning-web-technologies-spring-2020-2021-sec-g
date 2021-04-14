@@ -4,17 +4,32 @@
     font-family: sans-serif;
 
 }
+.navbar{
+    width: 85%;
+    height: 15%;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .container{
     height: 100vh;
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
     background-color: #000002;
-
     background-image: url(./assets/david-werbrouck-5GwLlb-_UYk-unsplash.jpg);
-
 }
+
+.logo{
+    width: 30px;
+    cursor: pointer;
+}
+
 .login-content{
+    /* width: 350px; */
     margin: 100px;
     background-color: #ffffff;
     box-sizing: border-box;
@@ -24,6 +39,8 @@
     height: 60vh;
     display: flex;
     align-items: center;
+    justify-content: center;
+
 }
 .login-content h1{
     padding: 0 0 15px 0;
@@ -32,7 +49,7 @@
     border-bottom: 1px solid silver;
 }
 
-.login-content input{
+#input{
     width: 180px;
     margin: 10px;
     padding: 10px;
@@ -44,15 +61,16 @@
     width: 100%;
    
 }
-.login-content .submit{
+.submit{
     border-radius: 5px;
     color: white;
     top: 10px;
     padding: 10px;
-    width: 100%;
-    margin: 10px 0px;
-    border: transparent;
+    width: 200px;
+    margin: 10px 10px;
+    border: none;
     background-color: black;
+
 }
 a{
     text-decoration: none;

@@ -6,10 +6,7 @@
     include('header/header.php');  
 ?>
 <div class="body">
-<?php
-        include('sidebar/sidebar.php');
-?>
-<?php
-    include('dashboard-main/main.php');
-?>
-
+    <?php
+        include('dashboard-main/main.php');
+    ?>
+</div>

@@ -2,7 +2,11 @@
     .body{
         display: flex;
     } 
+    .search{
+        height:auto;
+    }
     .main{
+        height: 100vh;
         margin : 20px;
         margin-top: 30px;
         padding: 10px;

@@ -6,35 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="signupStyles.css">
-    <script defer src="./JSPractice/signup.js"></script>
+    <!-- <script defer src="./Final_JS_Lab_Work/signup.js"></script> -->
 </head>
 <body>
     <div class="container">
+        <div class="navbar">
+            <img src="../images/logo.png" alt="Bank logo" class="logo" onclick="Redirect()">
+        </div>
         <div class="signup-content">
-            <div id="error"></div>
+            <div class="error"></div>
             <form id="form" action="../../controller/regCheck.php" method="POST">
                 <h1>Sign Up</h1>
                 <table>
                     <tr>
-                        <td><input type="text" name="username" 
-                            id="username" required 
+                        <td><input type="text" 
+                            name="username" 
+                            id="input"
+                            class="username"  
                             placeholder="Username">
                         </td>
                     </tr>
-                        <td><input type="email" name="email" 
-                            id="email" required 
+                        <td><input 
+                            type="email" 
+                            name="email" 
+                            id="input"
+                            class="email"  
                             placeholder="Email Address">
                         </td>
                     <tr>
                     <tr>
-                        <td><input type="password" name="password" 
-                            id="password" required 
+                        <td><input type="password" 
+                            name="password" 
+                            id="input"
+                            class="password"  
                             placeholder="Password">
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="password" name="repassword" 
-                            id="repassword" required 
+                        <td><input type="password" 
+                            name="repassword" 
+                            id="input"
+                            class="repassword"  
                             placeholder="Re-password">
                         </td>
                     </tr>
@@ -48,7 +60,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <input name ="submit" type="submit" value="submit">
+                            <input class="submit" name ="submit" type="submit" value="submit">
                         </td>
                     </tr>
                     <tr><td>Have an account? <a href="./login.html"><strong>Login</strong></a></td>
@@ -57,5 +69,25 @@
             </form>
         </div>
     </div>
+    <script>
+        const username = document.getElementsByClassName('username');
+        const email = document.getElementByClassName('email');
+        const email = document.getElementByClassName('email');
+        const password = document.getElementByClassName('password');
+        const repassword = document.getElementByClassName('repassword');
+        const form = document.getElementByClassName('form');
+        const errorElement = document.getElementByClassName('error');
+        form.addEventListener('submit',(e)=>{
+            let messages=[];
+            if(name.value === '' || name.value == null){
+                messages.push('Name is required');
+            }
+            if(messages.length>0){
+                e.preventDefault();
+                errorElement.innerHTML = messages.join(', ');
+            }
+        });
+
+    </script>
 </body>
 </html>

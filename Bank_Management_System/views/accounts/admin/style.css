@@ -28,3 +28,6 @@ button{
     outline: none;
     cursor: pointer;
 }
+.body{
+    padding-left: 100px;
+}

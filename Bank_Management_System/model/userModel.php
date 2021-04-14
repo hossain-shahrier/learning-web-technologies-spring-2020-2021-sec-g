@@ -34,8 +34,8 @@ function userName($email){
 	$row = mysqli_fetch_assoc($result);
 	return $row['username'];
 }
+
 function insertUser($user){
-	
     $conn = getConnection();
     $sql = "insert into users values('', '{$user['username']}','{$user['password']}','{$user['email']}','{$user['account']}','{$user['active']}',0,0,0,0)";
 
@@ -46,8 +46,8 @@ function insertUser($user){
 	}else{
 		return false;
 	}
-
 }
+
 function activeStatus($email){
 	$conn = getConnection();
 	$sql = "select * from users where email='{$email}' ";

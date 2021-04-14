@@ -15,7 +15,7 @@
         left: 0;
         padding: 30px;
         width: 250px;
-        height: 77vh;
+        height: auto;
         box-shadow: 2px 0px 3px 0px #ccc;
     }
     .contents{

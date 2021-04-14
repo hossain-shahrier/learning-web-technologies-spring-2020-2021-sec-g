@@ -25,7 +25,8 @@
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.onreadystatechange = function(){
                 if(this.readyState == 4 && this.status == 200){
-                    document.getElementById('result').innerHTML = this.responseText;
+                    //var jsonObject = JSON.parse();
+                    document.getElementById('result').innerHTML = xhttp.responseText;
                 }
             }
             xhttp.send('name='+ data);
