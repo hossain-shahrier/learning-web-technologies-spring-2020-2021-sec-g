@@ -161,6 +161,7 @@ function userBalance($holder_id){
 	$row = mysqli_fetch_assoc($result);
 	return $row['balance'];
 }
+
 function ReceiverBalance($id){
 	$conn = getConnection();
 	$sql = "select * from users where id='{$id}' ";
@@ -182,6 +183,16 @@ function updateHolder($holder_balance,$amount,$id){
 function updateReceiver($receiver_balance,$amount,$id){
 	$conn = getConnection();
 	$sql = "UPDATE `users` SET `balance`='{$receiver_balance}',`transaction`='{$amount}' WHERE id='{$id}' ";
+	$result = mysqli_query($conn, $sql);
+	if($result){
+		return true;
+	}else{
+		return false;
+	}
+}
+function updateUser($username,$id){
+	$conn = getConnection();
+	$sql = "UPDATE `users` SET `username`='{$username}' WHERE id='{$id}' ";
 	$result = mysqli_query($conn, $sql);
 	if($result){
 		return true;

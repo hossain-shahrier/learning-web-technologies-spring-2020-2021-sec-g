@@ -13,17 +13,53 @@ function validateUser($email,$password){
 		return false;
 	}
 }
-
-function TransactionHistory($username,$account,$amount){
+function insertBusiness($business){
 	$conn = getConnection();
-	$sql  = "INSERT INTO `transaction_users`(`id`, `username`, `account`, `transaction`) VALUES ('','{$username}','{$account}','{$amount}')";
+    $sql = "INSERT INTO business VALUES ('','{$business['username']}','{$business['bname']}','{$business['phone']}','{$business['btype']}','{$business['burl']}','','{$business['blocation']}')";
 	$result = mysqli_query($conn, $sql);
 	if($result){
 		return true;
 	}else{
 		return false;
 	}
+
 }
+function insertLoan($loan){
+	$conn = getConnection();
+	$sql = "INSERT INTO `business`( `loan`) VALUES ('$loan') WHERE `name` =$loan ";
+	$result = mysqli_query($conn, $sql);
+	if($result){
+		return true;
+	}else{
+		return false;
+	}
+
+}
+
+function insertUser($user){
+	
+    $conn = getConnection();
+    $sql = "insert into users values('', '{$user['username']}','{$user['password']}','{$user['email']}','{$user['account']}',0)";
+
+	$result = mysqli_query($conn, $sql);
+
+	if($result){
+		return true;
+	}else{
+		return false;
+	}
+
+}
+// function TransactionHistory($username,$account,$amount){
+// 	$conn = getConnection();
+// 	$sql  = "INSERT INTO `transaction_users`(`id`, `username`, `account`, `transaction`) VALUES ('','{$username}','{$account}','{$amount}')";
+// 	$result = mysqli_query($conn, $sql);
+// 	if($result){
+// 		return true;
+// 	}else{
+// 		return false;
+// 	}
+// }
 function transaction_users(){
 	$conn =getconnection();
 	$sql = "SELECT * FROM `transaction_users` ";
@@ -53,41 +89,15 @@ function userId($email){
 	$row = mysqli_fetch_assoc($result);
 	return $row['id'];
 }
-function userName($email){
+function userName($id){
 	$conn = getConnection();
-	$sql = "select * from users where email='{$email}' ";
+	$sql = "select * from users where id='{$id}' ";
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 	return $row['username'];
 }
 
-function insertUser($user){
-	
-    $conn = getConnection();
-    $sql = "insert into users values('', '{$user['username']}','{$user['password']}','{$user['email']}','{$user['account']}',0)";
 
-	$result = mysqli_query($conn, $sql);
-
-	if($result){
-		return true;
-	}else{
-		return false;
-	}
-
-}
-function insertTransaction($transaction){
-	$conn = getConnection();
-    $sql = "insert into users values()";
-
-}
-function connection(){
-	$conn = getConnection();
-	return $conn;
-}
-function sql($id){
-	$sql = "select * from users where id= $id";
-	return $sql;
-}
 function getUserbyId($id){
 	
 	$conn = getConnection();
@@ -116,6 +126,14 @@ function getAllUser(){
 	return $users;
 }
 
+function getAdmin(){
+
+	$conn = getConnection();
+	$sql = "select * from users where id = 5 ";
+	$result = mysqli_query($conn, $sql);
+	$row = mysqli_fetch_assoc($result);
+	return $row['username'];
+}
 function deleteUser($id){
 	$conn = getConnection();
 	$sql = "delete from users where id='{$id}";
@@ -143,6 +161,7 @@ function userBalance($holder_id){
 	$row = mysqli_fetch_assoc($result);
 	return $row['balance'];
 }
+
 function ReceiverBalance($id){
 	$conn = getConnection();
 	$sql = "select * from users where id='{$id}' ";
@@ -164,6 +183,16 @@ function updateHolder($holder_balance,$amount,$id){
 function updateReceiver($receiver_balance,$amount,$id){
 	$conn = getConnection();
 	$sql = "UPDATE `users` SET `balance`='{$receiver_balance}',`transaction`='{$amount}' WHERE id='{$id}' ";
+	$result = mysqli_query($conn, $sql);
+	if($result){
+		return true;
+	}else{
+		return false;
+	}
+}
+function updateUser($username,$id){
+	$conn = getConnection();
+	$sql = "UPDATE `users` SET `username`='{$username}' WHERE id='{$id}' ";
 	$result = mysqli_query($conn, $sql);
 	if($result){
 		return true;

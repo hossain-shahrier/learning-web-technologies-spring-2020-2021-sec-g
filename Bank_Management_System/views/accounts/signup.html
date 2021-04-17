@@ -15,39 +15,42 @@
         </div>
         <div class="signup-content">
             <div class="error"></div>
-            <form id="form" action="../../controller/regCheck.php" method="POST">
+            <form id="form" name="signup" action="../../controller/regCheck.php" method="POST" onsubmit="return validation()">
                 <h1>Sign Up</h1>
                 <table>
                     <tr>
                         <td><input type="text" 
                             name="username" 
-                            id="input"
                             class="username"  
                             placeholder="Username">
+                            <div id="errorUser" style="font-size: small; text-align: center;color: red;"></div>
                         </td>
                     </tr>
                         <td><input 
                             type="email" 
                             name="email" 
-                            id="input"
+                            
                             class="email"  
                             placeholder="Email Address">
+                            <div id="error" style="font-size: small; text-align: center;color: red;"></div>
                         </td>
                     <tr>
                     <tr>
                         <td><input type="password" 
                             name="password" 
-                            id="input"
+                            
                             class="password"  
                             placeholder="Password">
+                            <div id="errorPass" style="font-size: small; text-align: center;color: red;"></div>
                         </td>
                     </tr>
                     <tr>
                         <td><input type="password" 
                             name="repassword" 
-                            id="input"
+                            
                             class="repassword"  
                             placeholder="Re-password">
+                            <div id="errorRePass" style="font-size: small; text-align: center;color: red; padding: 5px;"></div>
                         </td>
                     </tr>
                     <tr>
@@ -69,25 +72,45 @@
             </form>
         </div>
     </div>
-    <script>
-        const username = document.getElementsByClassName('username');
-        const email = document.getElementByClassName('email');
-        const email = document.getElementByClassName('email');
-        const password = document.getElementByClassName('password');
-        const repassword = document.getElementByClassName('repassword');
-        const form = document.getElementByClassName('form');
-        const errorElement = document.getElementByClassName('error');
-        form.addEventListener('submit',(e)=>{
-            let messages=[];
-            if(name.value === '' || name.value == null){
-                messages.push('Name is required');
+         <script type = "text/javascript">
+            function Redirect() {
+               window.location = "../index.html";
             }
-            if(messages.length>0){
-                e.preventDefault();
-                errorElement.innerHTML = messages.join(', ');
-            }
-        });
+            function validation(){
+                
+                if(document.signup.username.value == ""){
+                    document.getElementById('errorUser').innerHTML = "Please enter your username .";
+                    return false;
+                }
+                if(document.signup.password.value.length <3){
+                    document.getElementById('errorPass').innerHTML = "Username must be more than three letters .";
+                    return false;
+                }
 
-    </script>
+                if(document.signup.email.value == ""){
+                    document.getElementById('error').innerHTML = "Please enter your email address .";
+                    return false;
+                }
+                
+                if(document.signup.password.value == ""){
+                    document.getElementById('errorPass').innerHTML = "Please enter your password .";
+                    return false;
+                }
+                if(document.signup.password.value.length <3){
+                    document.getElementById('errorPass').innerHTML = "Password must be more than three letters .";
+                    return false;
+                }
+                if(document.signup.repassword.value == ""){
+                    document.getElementById('errorRePass').innerHTML = "Please enter password again .";
+                    return false;
+                }
+                if(document.signup.repassword.value != document.signup.password.value){
+                    document.getElementById('errorRePass').innerHTML = "Pasword and Repasswoed mismatched .";
+                    return false;
+                }
+                
+                
+            }
+        </script>
 </body>
 </html>

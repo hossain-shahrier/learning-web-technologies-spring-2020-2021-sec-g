@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <style>
     .businessInfo{
         margin-top: 10px;
@@ -26,7 +29,6 @@
     }
     .businessInfo {
         left: 400px;
-
     }
     #submit{
         background: transparent;
@@ -35,18 +37,22 @@
         border-radius: 5px;
     }
 </style>
-<div class="businessInfo">
-    <center>
-    <form action="./business-main/userBusiness.php" method="POST">
-        <label>Business Contact</label>
-        <input type="text" name="username" id="username" placeholder="Write your full Username" >
-        <label>Business details</label>
-        <input type="text" name="name" id="name" placeholder="Legal Business Name" >
-        <input type="number" name="phone" id="phone" placeholder="Business phone number" >
-        <input type="text" name="type" id="type" placeholder="Business Type" >
-        <input type="url" name="url" id="url" placeholder="Business Url" >
-        <input type="text" name="location" id="location" placeholder="Business Location" >
-        <input type="submit" value="Submit" name="submit" id="submit">
-    </form>
-    </center>
-</div>
+</head>
+    <div class="businessInfo">
+        <center>
+        <form id="business" name ="business" action="./business-main/userBusiness.php" method="POST" onsubmit="return validation()">
+            <label>Business Contact</label>
+            <input type="text" name="username" placeholder="Write your full Username" >
+            <div class="error"></div>
+            <label>Business details</label>
+            <input type="text" name="name" id="name" placeholder="Legal Business Name" >
+            <input type="number" name="phone" id="phone" placeholder="Business phone number" >
+            <input type="text" name="type" id="type" placeholder="Business Type" >
+            <input type="url" name="url" id="url" placeholder="Business Url" >
+            <input type="text" name="location" id="location" placeholder="Business Location" >
+            <input type="submit" value="Submit" name="submit" id="submit">
+        </form>
+        </center>
+    </div>
+</body>
+</html>

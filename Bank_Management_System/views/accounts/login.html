@@ -11,23 +11,27 @@
     <!-- <img src="../images/logo_black.png" alt="Bank logo" class="logo" />  -->
     <div class="container">
         <div class="navbar">
-            <img src="../images/logo.png" alt="Bank logo" class="logo" onclick="Redirect()" onsubmit="return validation()">
+            <img src="../images/logo.png" alt="Bank logo" class="logo" onclick="Redirect()">
         </div>
         <div class="login-content">
             
-            <form name="login" action="../../controller/logCheck.php" method="POST">
+            <form name="login" action="../../controller/logCheck.php" method="POST" onsubmit="return validation()" >
                 <!-- -->
                 <h1>Log In</h1>
+                
                 <table>
                         <td><input type="email" name="email" 
                             id="input" 
                             placeholder="Email Address">
+                            <div id="error" style="font-size: small; text-align: center;color: red;"></div>
                         </td>
+                        
                     <tr>
                     <tr>
                         <td><input type="password" name="password" 
                             id="input" 
                             placeholder="Password">
+                            <div id="errorPass" style="font-size: small; text-align: center;color: red;"></div>
                         </td>
                     </tr>
                     <tr>
@@ -41,12 +45,27 @@
             </form>
         </div>
     </div>
-    <script>
+    <script type = "text/javascript">
             function Redirect() {
                window.location = "../index.html";
             }
             function validation(){
-                var firstname = document.forms[""]
+                
+                if(document.login.email.value == ""){
+                    document.getElementById('error').innerHTML = "Please enter your email address .";
+                    return false;
+                }
+                
+                if(document.login.password.value == ""){
+                    document.getElementById('errorPass').innerHTML = "Please enter your Password .";
+                    return false;
+                }
+                if(document.login.password.value == ""){
+                    document.getElementById('errorPass').innerHTML = "Please enter your Password .";
+                    return false;
+                }
+                
+                
             }
     </script>
 </body>

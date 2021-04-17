@@ -2,6 +2,8 @@
 
 <?php
     session_start();
+    include('model/userModel.php');
+
 ?>
 <?php
     include('header/header.php');  

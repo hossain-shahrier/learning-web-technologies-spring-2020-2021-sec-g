@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="style.css">
 <?php
     session_start();
-    require_once('./model/userModel.php');
+    include('model/userModel.php');
+
 ?>
 <?php
     include('header/header.php');  
