@@ -9,8 +9,8 @@
 <div class="loan-main">
     <center>
     <h4>Business Information</h4>
-    <p>Select your business to get loan</p>
-    <form id="form" action="./loan-main/loantype.php" method="POST">
+    <p>Select business to get a loan</p>
+    <form name="businessLoan" id="form" action="./loan-main/loantype.php" method="POST" onsubmit="return validation()">
     
 
         <select name="select">
@@ -24,13 +24,15 @@
                 ?>
         </select><br>
         <p><strong> All Available Loans</strong></p>
-        <input name="radio" type="radio" id="exlusive" name="exlusive" value="exlusive">
-        <label name="radio"for="exlusive">Exlusive Duo</label><br>
-        <input name="radio"type="radio" id="damage" name="damage" value="damage">
-        <label name="radio" for="damage">Damage Lifts</label><br>
-        <input name="radio" type="radio" id="tech" name="tech" value="tech">
-        <label name="radio" for="tech">Techno leads</label><br>
-        <input id="submit" type="submit" value="Submit" name="submit">
+        <input  type="radio" id="radio" name="exlusive" value="exlusive">
+        <label  for="exlusive">Exlusive Duo</label><br>
+        <input  type="radio" id="radio" name="damage" value="damage">
+        <label  for="damage">Damage Lifts</label><br>
+        <input  type="radio" id="radio" name="tech"   value="tech">
+        <label  for="tech">Techno leads</label><br>
+        <input  id="submit" type="submit" value="Submit" name="submit">
+        <div id="error" style="color: red
+        ;"></div>
     </form>
     </center>
 </div>

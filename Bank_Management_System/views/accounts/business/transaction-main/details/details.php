@@ -19,13 +19,13 @@
             </div>
             <br>
             <div class="body-input">
-                <form action="" method="POST">
+                <form name="transactionAmoun" action="" method="POST" onsubmit="return validation()">
                     <input type="number" name="amount" placeholder="Enter Ammount...">
                     <input type="submit" name ="send" value="Send" class="send_button">
+                    <div class="error"></div>
                 </form>
                 <a href='../../dashboard.php'>Back</a>
             </div>
-            
         </div>
 </div>
 
@@ -45,7 +45,6 @@
                             $receiver_balance   = ReceiverBalance($id);
                             $receiver_balance   = $receiver_balance + $amount;
                             $status             = updateReceiver($receiver_balance,$amount,$id);
-                            TransactionHistory($username,$account,$amount);
                             if($status){
 
                                 echo "Transaction Completed !";
@@ -69,3 +68,12 @@
         ?>
     </center>
 </div>
+<script type = "text/javascript">
+            function validation(){
+                
+                if(document.transaction.amount.value == ""){
+                    document.getElementById('error').innerHTML = "Please enter your email address .";
+                    return false;
+                }
+            }
+</script>

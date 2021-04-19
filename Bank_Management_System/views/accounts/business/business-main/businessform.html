@@ -11,7 +11,7 @@
         border-radius: 8px;
         width: auto;
         height: auto;
-        display: flex;
+        
         box-shadow: 2px 1px 3px 0px #ccc;
         /* word-wrap: break-word; */
     }
@@ -24,8 +24,10 @@
         border-radius: 10px;
     }
     form {
-    display: block;
-    margin-top: 0em;
+        margin-top: 0em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;        
     }
     .businessInfo {
         left: 400px;
@@ -39,11 +41,11 @@
 </style>
 </head>
     <div class="businessInfo">
-        <center>
+
         <form id="business" name ="business" action="./business-main/userBusiness.php" method="POST" onsubmit="return validation()">
             <label>Business Contact</label>
             <input type="text" name="username" placeholder="Write your full Username" >
-            <div class="error"></div>
+            <div id="error"></div>
             <label>Business details</label>
             <input type="text" name="name" id="name" placeholder="Legal Business Name" >
             <input type="number" name="phone" id="phone" placeholder="Business phone number" >
@@ -52,7 +54,15 @@
             <input type="text" name="location" id="location" placeholder="Business Location" >
             <input type="submit" value="Submit" name="submit" id="submit">
         </form>
-        </center>
     </div>
 </body>
 </html>
+<script type = "text/javascript">
+    function validation(){
+        
+        if(form.username.value == null){
+            document.getElementById('error').innerHTML = "Please enter your username.";
+            return false;
+        }
+    }
+</script>

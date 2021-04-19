@@ -9,31 +9,19 @@
     include('header/header.php');  
 ?>
 <div class="body">
-<?php
-    include('sidebar/sidebar.php');
-?>
-<?php
-    include('business-main/main.php');
-?>
-
+    <?php
+        include('sidebar/sidebar.php');
+    ?>
+    <?php
+        include('business-main/main.php');
+    ?>
 </div>
 <script type = "text/javascript">
     function validation(){
         
-        if(document.business.username.value == ""){
+        if(form.username.value == ""){
             document.getElementById('error').innerHTML = "Please enter your username.";
             return false;
         }
-        
-        // if(document.login.password.value == ""){
-        //     document.getElementById('errorPass').innerHTML = "Please enter your Password .";
-        //     return false;
-        // }
-        // if(document.login.password.value == ""){
-        //     document.getElementById('errorPass').innerHTML = "Please enter your Password .";
-        //     return false;
-        // }
-        
-        
     }
 </script>

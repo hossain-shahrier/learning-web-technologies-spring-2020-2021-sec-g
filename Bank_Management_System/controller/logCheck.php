@@ -9,17 +9,18 @@
         }
         else{
             $status     = validateUser($email,$password);
-            $account    = userAccount($email);
-            $username   = userName($email);
-            $id         = userId($email);
-            $active     = activeStatus($email);
-
             if($status){                
                 $_SESSION['flag']       = true;
                 $_SESSION['username']   = $username;
                 $_SESSION['account']    = $account;
                 $_SESSION['email']      = $email;
                 $_SESSION['id']         = $id;
+
+                $account    = userAccount($email);
+                $username   = userName($email);
+                $id         = userId($email);
+                $active     = activeStatus($email);
+            
                 if($active){
                     if($_SESSION['flag'] == true){
                         header('location: ../views/accounts/home.php');

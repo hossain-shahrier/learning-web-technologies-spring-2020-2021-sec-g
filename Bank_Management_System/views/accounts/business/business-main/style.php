@@ -2,17 +2,21 @@
     .body{
         display: flex;
         background-color: #F7F9FA;
+        width: 100%;
     } 
     .main{
         margin : 20px;
         margin-top: 30px;
         padding: 10px;
         display: flex;
-        
+        align-items: center;   
     }
     .result-container{
-        margin: 200px;
-        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 100px;
+        padding: 30px;
         height: auto;
         width: auto;
         box-sizing: border-box;
