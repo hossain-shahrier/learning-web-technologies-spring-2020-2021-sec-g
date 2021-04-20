@@ -9,14 +9,16 @@
         }
         else{
             $status     = validateUser($email,$password);
-            if($status){                
+            
+            // 
+            if($status){  
+                $username   = userName($email);
+                $id         = userId($email);              
                 $_SESSION['flag']       = true;
                 $_SESSION['username']   = $username;
-                $_SESSION['account']    = $account;
                 $_SESSION['email']      = $email;
                 $_SESSION['id']         = $id;
 
-                $account    = userAccount($email);
                 $username   = userName($email);
                 $id         = userId($email);
                 $active     = activeStatus($email);

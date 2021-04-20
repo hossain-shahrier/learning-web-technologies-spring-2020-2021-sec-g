@@ -42,27 +42,23 @@
 </head>
     <div class="businessInfo">
 
-        <form id="business" name ="business" action="./business-main/userBusiness.php" method="POST" onsubmit="return validation()">
+        <form id="business" name ="businessForm" action="./business-main/userBusiness.php" method="POST" onsubmit="return validation()">
             <label>Business Contact</label>
-            <input type="text" name="username" placeholder="Write your full Username" >
-            <div id="error"></div>
+            <input type="text" name="username" id="username" placeholder="Write your full Username" oninput="hide()">
+            <div id="error" style="color: red;"></div>
             <label>Business details</label>
-            <input type="text" name="name" id="name" placeholder="Legal Business Name" >
-            <input type="number" name="phone" id="phone" placeholder="Business phone number" >
-            <input type="text" name="type" id="type" placeholder="Business Type" >
-            <input type="url" name="url" id="url" placeholder="Business Url" >
-            <input type="text" name="location" id="location" placeholder="Business Location" >
-            <input type="submit" value="Submit" name="submit" id="submit">
+            <input type="text"   name="name"  id="name"   placeholder="Legal Business Name" >
+            <div id="berror" style="color: red;"></div>
+            <input type="number" name="phone" id="phone"  placeholder="Business phone number" >
+            <div id="perror" style="color: red;"></div>
+            <input type="text"   name="type"  id="type"   placeholder="Business Type" >
+            <div id="terror" style="color: red;"></div>
+            <input type="url"    name="url"   id="url"    placeholder="Business Url" >
+            <div id="uerror" style="color: red;"></div>
+            <input type="text"   name="location" id="location" placeholder="Business Location" >
+            <div id="lerror" style="color: red;"></div>
+            <input type="submit" name="submit" id="submit" value="Submit"  >
         </form>
     </div>
 </body>
 </html>
-<script type = "text/javascript">
-    function validation(){
-        
-        if(form.username.value == null){
-            document.getElementById('error').innerHTML = "Please enter your username.";
-            return false;
-        }
-    }
-</script>

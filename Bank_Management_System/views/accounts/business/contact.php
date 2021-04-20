@@ -13,7 +13,16 @@
         include('sidebar/sidebar.php');
 ?>
 <?php
-    include('contact-main/main.php');
+    include('contact-main/main.html');
 ?>
 
 </div>
+<script type = "text/javascript">          
+        function validation(){
+            if(document.messageForm.message.value == '')
+            {
+                document.getElementById('error').innerHTML = "Please write something in the Text Field. ";
+                return false;
+            }    
+        }
+</script>

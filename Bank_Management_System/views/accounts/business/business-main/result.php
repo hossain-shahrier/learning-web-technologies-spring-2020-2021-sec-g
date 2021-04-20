@@ -1,6 +1,6 @@
 <?php
     $username = $_SESSION['username'];
-    $id =$_SESSION['id'];
+    $id = $_SESSION['id'];
     $conn = mysqli_connect('localhost', 'root', '', 'bank_management_system');
     $sql = "SELECT * FROM `business` INNER JOIN `users` ON business.username = users.username WHERE users.username = '{$username}' ";
     $result = mysqli_query($conn, $sql);
